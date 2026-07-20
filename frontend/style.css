@@ -1,0 +1,53 @@
+body {
+    background-color:rgb(165, 151, 130) ;
+}
+h1 {
+    font-family: 'Bagel Fat One';
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+h3 {
+    text-align: center;
+    color: white;
+}
+.mainHubFunction {
+    background-color:rgb(216, 185, 215);
+    height: auto;
+    text-align: center;
+    padding: 20px;
+
+    textarea {
+        width: 800px;
+        height: 400px;
+        padding: 10px;
+    }
+    button {
+        margin-top: 20px;
+        width: 300px;
+        height: 65px;
+        border-radius: 18px;
+        background-color: rgb(165, 151, 130);
+        color: white;
+        border-color: white;
+    }
+}
+.featureButtons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+
+    button {
+        border-radius: 12px;
+        background-color:rgb(216, 185, 215);
+        border-color: white;
+        color:rgb(112, 103, 90);
+        padding: 14px 40px;
+    }
+}
+.featureOutputs {
+    background-color:rgb(216, 185, 215);
+    text-align: center;
+    padding: 20px;
+}
