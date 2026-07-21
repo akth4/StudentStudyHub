@@ -22,19 +22,50 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
                 const response = await fetch("http://localhost:3000/api/summary", {
                     method: "POST",//tells server im sending data
                     headers: { "Content-Type": "application/json"}, //says im sending JSON data specifically
-                    body: JSON.stringify({text:notes})
+                    body: JSON.stringify({text:notes})//makes notes json string
                 })
 
                 const data = await response.json();//converts server response to JS object
-                if (data.error) { output.innerText = data.error;}
-                else if (data.summary) { output.innerText = data.summary;}
-                else { output.innerText = "no response"}
+                
+                output.innerText = data.summary || data.error || "no response";
             } catch (error) {
                 output.innerText = "ERROR: unable to summarize!"
                 console.error(error)
             }
         })
 
-        
+        topicsButton.addEventListener("click", async () => {
+            try{
+                const response = await fetch("http://localhost:3000/api/topics", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json"},
+                    body: JSON.stringify({text:notes})
+                })
+
+                const data = await response.json();//converts server response to JS object
+
+                output.innerText = data.topics || data.error || "no response";
+            } catch (error) {
+                output.innerText = "ERROR: unable to get topics!"
+                console.error(error)
+            }
+        })
+
+        quizButton.addEventListener("click", async () => {
+            try{
+                const response = await fetch("http://localhost:3000/api/quiz", {
+                    method: "POST",
+                    headers: {"Content-Type" : "application/json"},
+                    body: JSON.stringify({text:notes})
+                })
+
+                const data = await response.json();
+
+                output.innerText = data.quiz || data.error || "no response";
+            } catch(error) {
+                output.innerText = "ERROR: unable to generate quiz!"
+                console.error(error)
+            }
+        }) 
     })
 })
