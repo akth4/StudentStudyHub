@@ -1,9 +1,9 @@
+import dotenv from "dotenv";//use variables from .env file
+dotenv.config();//loads variables from .env to process.env
+
 import express from "express"; //create backend server easily
 import cors from "cors";//frontend talks to backend
 import AIRoutes from "./routes/ai.js";//get ai routes
-
-import dotenv from "dotenv";//use variables from .env file
-dotenv.config();//loads variables from .env to process.env
 
 const app = express();//creates backend server app
 app.use(express.json()); //lets server read JSON data from requests

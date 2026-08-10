@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
             })
 
             const data = await response.json();//converts server response to JS object
+            console.log("data = ", data);
                 
-            output.innerText = data.summary || data.error || "no response";
+            output.innerText = data.mysummary || data.error || "no response";
         } catch (error) {
             output.innerText = "ERROR: unable to summarize!"
             console.error(error)
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
 
             const data = await response.json();//converts server response to JS object
 
-            output.innerText = data.topics || data.error || "no response";
+            output.innerText = data.mytopics || data.error || "no response";
         } catch (error) {
             output.innerText = "ERROR: unable to get topics!"
             console.error(error)
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
 
             const data = await response.json();
 
-            output.innerText = data.quiz || data.error || "no response";
+            output.innerText = data.myquiz || data.error || "no response";
         } catch(error) {
             output.innerText = "ERROR: unable to generate quiz!"
             console.error(error)
