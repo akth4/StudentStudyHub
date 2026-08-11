@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
     const topicsButton = document.getElementById("topicsBtn");
     const summaryButton = document.getElementById("summarizeBtn");
     const quizButton = document.getElementById("quizBtn");
+    const featureButtons = document.getElementById("featureButtons");
 
     console.log("Button:", submitButton);
     console.log("Notes input:", notesInput);
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
     //add action to button
     submitButton.addEventListener("click", async () => {
         console.log("BUTTON CLICKED!") 
+        featureButtons.classList.remove("hidden");
     })
 
     summaryButton.addEventListener("click", async () => {
