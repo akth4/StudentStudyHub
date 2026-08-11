@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
 
     summaryButton.addEventListener("click", async () => {
         const notes = notesInput.value;
+        output.innerText = "loading...";
         try {
             const response = await fetch("http://localhost:3000/api/summary", {
                 method: "POST",//tells server im sending data
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
 
     topicsButton.addEventListener("click", async () => {
         const notes = notesInput.value;
+        output.innerText = "loading...";
         try{
             const response = await fetch("http://localhost:3000/api/topics", {
                 method: "POST",
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {//make sure JS only runs af
 
     quizButton.addEventListener("click", async () => {
         const notes = notesInput.value;
+        output.innerText = "loading...";
         try{
             const response = await fetch("http://localhost:3000/api/quiz", {
                 method: "POST",
